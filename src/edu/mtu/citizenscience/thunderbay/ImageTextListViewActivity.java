@@ -65,51 +65,5 @@ public class ImageTextListViewActivity extends Activity implements OnItemClickLi
         toast.show();
     }
     
-    private boolean loadData(){
-		InputStream csvFile;
-		try {
-			csvFile = getAssets().open("WreckList.csv");
-		} catch (IOException e) {
-			e.printStackTrace();
-			return false;
-		}
-
-		BufferedReader reader = new BufferedReader(new InputStreamReader(csvFile));
-		try {
-			String line;
-			int i = 0;
-			titles = new ArrayList<String>();
-			descriptions = new ArrayList<String>();
-			images = new ArrayList<Integer>();
-			while ((line = reader.readLine()) != null) {
-				String[] RowData = line.split(";");
-				// TODO:
-				System.out.println(line);
-				System.out.println(RowData[0]);
-				System.out.println(RowData[1]);
-				if (i > 0) {
-					titles.add(RowData[0].toString());
-					descriptions.add(RowData[1].toString());
-					images.add(R.drawable.thuder_bay_logo);
-				}
-				System.out.println("added");
-				i++;
-			}
-		}
-		catch (IOException ex) {
-			// handle exception
-			return false;
-		}
-		finally {
-			try {
-				csvFile.close();
-			}
-			catch (IOException e) {
-				// handle exception
-				return false;
-			}
-		}
-		return true;
-
-	}
+    
 }
