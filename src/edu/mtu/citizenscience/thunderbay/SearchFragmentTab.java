@@ -1,6 +1,7 @@
 package edu.mtu.citizenscience.thunderbay;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,18 +13,12 @@ public class SearchFragmentTab extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.searchfragmenttab, container, false);
-        Button button = (Button) rootView.findViewById(R.id.button1);
-        button.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-            selfDestruct(v);
-          }
-        });
+        
         return rootView;
     }
     
-    public void selfDestruct(View view) {
-        System.out.println("selfDestruct.");
-    }
+//    public void selfDestruct(View view) {
+//        System.out.println("selfDestruct.");
+//    }
  
 }
