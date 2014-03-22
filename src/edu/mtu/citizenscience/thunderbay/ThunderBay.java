@@ -27,51 +27,7 @@ public class ThunderBay extends Activity
 		return shipWrecks;
 	}
 
-	/**
-	 * Loads data from tsv file and calls BuildWreck with array of data per ship
-	 * @author jdploe
-	 * @return boolean -- true: successful load.... false: unsuccessful load
-	 *
-	 */
-	public boolean loadData(){
-		InputStream tsvFile;
-		try {
-			tsvFile = getAssets().open("project5wrecks.tsv");
-		} catch (IOException e) {
-			e.printStackTrace();
-			return false;
-		}
-
-		BufferedReader reader = new BufferedReader(new InputStreamReader(tsvFile));
-		try {
-			String line;
-			int readCount = 0;
-			while ((line = reader.readLine()) != null) {
-				String[] RowData = line.split("\\t");
-				readCount++;
-				//ignore first row of headings
-				if(readCount>1){
-					BuildWreck(RowData);
-				}
-
-			}
-		}
-		catch (IOException ex) {
-			// handle exception
-			return false;
-		}
-		finally {
-			try {
-				tsvFile.close();
-			}
-			catch (IOException e) {
-				// handle exception
-				return false;
-			}
-		}
-		return true;
-
-	}
+	
 
 	/**
 	 * Loads data from tsv file and calls BuildWreck with array of data per ship
@@ -80,7 +36,7 @@ public class ThunderBay extends Activity
 	 * @return boolean -- true: successful load.... false: unsuccessful load
 	 *
 	 */
-	private ShipWreck BuildWreck(String[] rowData) {
+	public ShipWreck BuildWreck(String[] rowData) {
 		ShipWreck myWreck = new ShipWreck();
 		
 		myWreck.setName(rowData[0]);

@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
 	Fragment mapFragmentTab = new MapFragmentTab();
 	Fragment searchFragmentTab = new SearchFragmentTab();
 
-
+	ThunderBay myBay = new ThunderBay();
 	
 
 	@Override
@@ -32,9 +32,9 @@ public class MainActivity extends Activity {
 
 		ActionBar actionBar = getActionBar();
 
-		//ThunderBay myBay = new ThunderBay();
+		ThunderBay myBay = new ThunderBay();
 		
-		//myBay.loadData();
+		loadData();
 
 		//Generic test to check if data is entered in correctly.
 		//myBay.testSearch(10);
@@ -63,6 +63,52 @@ public class MainActivity extends Activity {
 		actionBar.addTab(mapTab, true);
 		actionBar.addTab(searchTab, false);
 		
+	}
+	
+	/**
+	 * Loads data from tsv file and calls BuildWreck with array of data per ship
+	 * @author jdploe
+	 * @return boolean -- true: successful load.... false: unsuccessful load
+	 *
+	 */
+	public boolean loadData(){
+		InputStream tsvFile;
+		try {
+			tsvFile = getAssets().open("project5wrecks.tsv");
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+
+		BufferedReader reader = new BufferedReader(new InputStreamReader(tsvFile));
+		try {
+			String line;
+			int readCount = 0;
+			while ((line = reader.readLine()) != null) {
+				String[] RowData = line.split("\\t");
+				readCount++;
+				//ignore first row of headings
+				if(readCount>1){
+					myBay.BuildWreck(RowData);
+				}
+
+			}
+		}
+		catch (IOException ex) {
+			// handle exception
+			return false;
+		}
+		finally {
+			try {
+				tsvFile.close();
+			}
+			catch (IOException e) {
+				// handle exception
+				return false;
+			}
+		}
+		return true;
+
 	}
 	
 }
