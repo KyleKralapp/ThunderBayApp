@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shipwrecks of Thunder Bay</string>
+    <string name="menu_settings">Settings</string>
+    <string name="HelpFragment">This is the Help Fragment</string>
+    <string name="MapFragment">This is the Map Fragment</string>
+    <string name="SearchFragment">This is the Search Fragment</string>
+    <string name="Button">Give Me List</string>
+</resources>
