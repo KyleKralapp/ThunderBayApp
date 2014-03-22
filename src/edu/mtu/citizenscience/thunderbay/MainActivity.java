@@ -12,8 +12,10 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.app.Activity;
+import android.content.Intent;
 
 public class MainActivity extends Activity {
 	// Declare Tab Variable
@@ -31,6 +33,15 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 
 		ActionBar actionBar = getActionBar();
+		
+		Button button = (Button)findViewById(R.id.button1);
+        button.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+	    	  Intent i = new Intent();
+	          startActivity(i);
+          }
+        });
 
 		//ThunderBay myBay = new ThunderBay();
 		

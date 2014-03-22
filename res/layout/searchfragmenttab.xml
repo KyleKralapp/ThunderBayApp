@@ -18,6 +18,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="@string/Button"
-        android:onClick="selfDestruct" />
+        android:onClick="start" />
  
 </RelativeLayout>

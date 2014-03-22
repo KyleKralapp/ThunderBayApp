@@ -6,4 +6,5 @@
     <string name="MapFragment">This is the Map Fragment</string>
     <string name="SearchFragment">This is the Search Fragment</string>
     <string name="Button">Give Me List</string>
+    <string name="image">Thumbnail</string>
 </resources>
