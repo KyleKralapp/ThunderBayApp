@@ -24,8 +24,13 @@ public class MainActivity extends Activity {
 	Fragment mapFragmentTab = new MapFragmentTab();
 	Fragment searchFragmentTab = new SearchFragmentTab();
 
-	ThunderBay myBay = new ThunderBay();
-
+	//ThunderBay myBay = new ThunderBay();
+//	// set
+//	((ThunderBay) this.getApplication()).addShipWreck(ShipWreck theWreck);
+//
+//	// get
+//	HashMap<String, ShipWreck> ships = ((ThunderBay) this.getApplication()).getShipWrecks();
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -33,17 +38,6 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 
 		ActionBar actionBar = getActionBar();
-		
-		Button button = (Button)findViewById(R.id.button1);
-        button.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-	    	  Intent i = new Intent();
-	          startActivity(i);
-          }
-        });
-
-		ThunderBay myBay = new ThunderBay();
 
 		loadData();
 
@@ -82,7 +76,9 @@ public class MainActivity extends Activity {
 	 * @return boolean -- true: successful load.... false: unsuccessful load
 	 *
 	 */
+	//TODO
 	public boolean loadData(){
+
 		InputStream tsvFile;
 		try {
 			tsvFile = getAssets().open("project5wrecks.tsv");
@@ -98,14 +94,21 @@ public class MainActivity extends Activity {
 				String[] RowData = line.split("\\t");
 				readCount++;
 				//ignore first row of headings
+
+				System.out.println("trying to add " + RowData[0] + " with size " + RowData.length);
+
 				if(readCount>1){
-					BuildWreck(RowData);
+					//myBay.addShipWreck(BuildWreck(RowData));
+					ThunderBay.addShipWreck(BuildWreck(RowData));
 				}
 
+				System.out.println(RowData[0] + " was added.");
 			}
 		}
 		catch (IOException ex) {
 			// handle exception
+			System.out.println(ex.getMessage());
+			System.out.println(ex.getCause());
 			return false;
 		}
 		finally {
@@ -120,160 +123,116 @@ public class MainActivity extends Activity {
 		return true;
 
 	}
-	
+
 	private ShipWreck BuildWreck(String[] rowData) {
 		ShipWreck myWreck = new ShipWreck();
-
 
 		myWreck.setName(rowData[0]);
 		myWreck.setType(rowData[1]);
 		myWreck.setHull(rowData[2]);
 
-
 		//Get yearBuilt
 		int yearBuilt = 0;
-		try{
+		try {
 			yearBuilt = Integer.valueOf(rowData[3]);
-		}
-		//Not an integer (unknown)
-		catch(Exception E){
+		}  catch(Exception E){ //Not an integer (unknown)
 			//Exception stuff here
 			System.out.println("THE YEAR BUILT IS UNKNOWN");
 			yearBuilt = -1;
-		}
-		finally{
+		} finally{
 			myWreck.setBuilt(yearBuilt);
 		}
-
 
 		//Get yearLost
 		int yearLost = 0;
 		try{
 			yearLost = Integer.valueOf(rowData[4]);
-		}
-		//Not an integer (unknown)
-		catch(Exception E){
+		}  catch(Exception E){ //Not an integer (unknown)
 			//Exception stuff here
 			System.out.println("THE YEAR LOST IS UNKNOWN");
 			yearLost = -1;
-		}
-		finally{
+		} finally{
 			myWreck.setLost(yearLost);
 		}
 
-
-
-
 		//Get Builder
 		myWreck.setBuilder(rowData[5]);
-
 		//Get Build Place
 		myWreck.setBuildPlace(rowData[6]);
-
-
-
 		//Get length
 		double length = 0;
-		try{
+		try {
 			length = Double.valueOf(rowData[7]);
-		}
-		//Not a Double (unknown)
-		catch(Exception E){
+		} catch(Exception E){ //Not a Double (unknown)
 			//Exception stuff here
 			System.out.println("THE LENGTH IS UNKNOWN");
 			length = -1;
-		}
-		finally{
+		} finally{
 			myWreck.setLength(length);
 		}
 
-
 		//Get Beam
 		double beam = 0;
-		try{
+		try {
 			beam = Double.valueOf(rowData[8]);
-		}
-		//Not a Double (unknown)
-		catch(Exception E){
+		} catch(Exception E){ //Not a Double (unknown)
 			//Exception stuff here
 			System.out.println("THE BEAM IS UNKNOWN");
 			beam = -1;
-		}
-		finally{
+		} finally {
 			myWreck.setBeam(beam);
 		}
 
-		
-		
-		
 		//Set Loss Type
 		myWreck.setLossType(rowData[9]);
-
 		//Set Cargo
 		myWreck.setCargo(rowData[10]);
-
-
+		
 		//Set Lives Lost
 		int livesLost = 0;
-		try{
+		try {
 			livesLost = Integer.valueOf(rowData[11]);
-		}
-		//Not an integer (unknown)
-		catch(Exception E){
+		} catch(Exception E){ //Not an integer (unknown)
 			//Exception stuff here
 			System.out.println("THE LIVES LOST IS UNKNOWN");
 			livesLost = -1;
-		}
-		finally{
+		} finally {
 			myWreck.setLivesLost(livesLost);
+			System.out.println("lives lost " + livesLost);
 		}
-
 
 		//Set County
 		myWreck.setCounty(rowData[12]);
-
 
 		/**
 		 * Need to parse longitutde and latitude
 		 * prolly gonna need to use regex
 		 * 
 		 */
-
 		myWreck.setLatitude(Float.MIN_VALUE); //FAKE DATA!!!!
 		myWreck.setLongitude(Float.MAX_VALUE);//FAKE DATA!!!!
-
-
-
-
+		
 		//Set depth
 		int depth = 0;
-		try{
+		try {
 			depth = Integer.valueOf(rowData[15]);
-		}
-		//Not an integer (unknown)
-		catch(Exception E){
+		} catch(Exception E){ //Not an integer (unknown)
 			//Exception stuff here
 			System.out.println("THE DEPTH IS UNKNOWN");
-			
+
 			depth = -1;
-		}
-		finally{
+		} finally {
 			myWreck.setDepth(depth);
 		}
-
 		
-
-
 		/**
-		 * Check to see if the record contains 
-		 * notes
+		 * Check to see if the record contains notes
 		 */
-				if(rowData.length==17){
-					myWreck.setNotes(rowData[16]);
-				}
+		if(rowData.length==17){
+			myWreck.setNotes(rowData[16]);
+		} 
 
-
-		return myBay.addShipWreck(myWreck);
+		return myWreck;
 	}
 }
 

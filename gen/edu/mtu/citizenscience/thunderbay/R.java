@@ -14,11 +14,11 @@ public final class R {
         public static final int thuder_bay_logo=0x7f020000;
     }
     public static final class id {
-        public static final int button1=0x7f060005;
         public static final int desc=0x7f060003;
         public static final int fragment_container=0x7f060000;
         public static final int icon=0x7f060001;
         public static final int list=0x7f060004;
+        public static final int searchbutton=0x7f060005;
         public static final int title=0x7f060002;
     }
     public static final class layout {
