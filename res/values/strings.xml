@@ -4,7 +4,170 @@
     <string name="menu_settings">Settings</string>
     <string name="HelpFragment">This is the Help Fragment</string>
     <string name="MapFragment">This is the Map Fragment</string>
-    <string name="SearchFragment">This is the Search Fragment</string>
-    <string name="Button">Give Me List</string>
+    <string name="Button">Search</string>
     <string name="image">Thumbnail</string>
+    <string name="type">Select Vessel Type</string>
+    <string name="hull">Select Hull Type</string>
+    <string name="built">Select the Century Built</string>
+    <string name="lost">Select the Century Lost</string>
+    <string name="builder">Select a Builder</string>
+    <string name="buildPlace">Select a Build Place</string>
+    <string name="county">Select the County Found In</string>
+    <string name="depth">Select the Depth of Wreck</string>
+    <string-array name="vesseltype_array">
+        <item ></item>
+        <item>Barge</item>
+        <item>Barkentine, 3 mast</item>
+        <item>Brig, 2 mast</item>
+        <item>Brigantine, 2 mast</item>
+        <item>Bulk Freighter</item>
+        <item>Dredge</item>
+        <item>Ocean Vessel</item>
+        <item>Package Freighter</item>
+        <item>Paddele Wheeler</item>
+        <item>Paddle Wheeler, later Steam Barge</item>
+        <item>Propeller</item>
+        <item>Schooner</item>
+        <item>Schooner, 2 mast</item>
+        <item>Schooner, 3 mast</item>
+        <item>Schooner Barge</item>
+        <item>Schooner Barge, 3 mast</item>
+        <item>Steam Barge</item>
+        <item>Tug</item>
+    </string-array>
+    <string-array name="hull_array">
+        <item ></item>
+        <item>Steel</item>
+        <item>Wood</item>
+    </string-array>
+    <string-array name="built_array">
+        <item ></item>
+        <item>1800</item>
+        <item>1900</item>
+    </string-array>
+    <string-array name="lost_array">
+        <item ></item>
+        <item>1800</item>
+        <item>1900</item>
+    </string-array>
+    <string-array name="builder_array">
+        <item ></item>
+        <item>American Ship Building Co.</item>
+        <item>Baker, James A.</item>
+        <item>Balley Brothers</item>
+        <item>Bidwell and Banta</item>
+        <item>Bower and Cash</item>
+        <item>Carpenter Brothers</item>
+        <item>Cheney, W.</item>
+        <item>Cleveland Drydock Copany</item>
+		<item>Davidson, James</item>
+        <item>Detroit Shipbuilding Co.</item>
+		<item>Elliott, James</item>
+        <item>Flensburger Schiffs Gesellshaft</item>
+        <item>Gager, C.L.</item>
+        <item>Gilman Applebee</item>
+        <item>Gilmore, Alanson</item>
+        <item>Globe Iron Works</item>
+        <item>Goble, George</item>
+        <item>Goodson, B.F.</item>
+        <item>Hanson and Scove</item>
+        <item>Jenks Shipbuilding Company</item>
+        <item>Jones</item>
+        <item>Jones, James M.</item>
+        <item>Lafrinier, Ira</item>
+        <item>Lafrinier and Stevenson</item>
+        <item>Langell, Simon</item>
+        <item>Lent, C.W.</item>
+        <item>Lester, P.L. and Arnold</item>
+        <item>Linn and Craig</item>
+        <item>Little</item>
+        <item>Little, Albert</item>
+        <item>Lutz</item>
+        <item>Mason and Bidwell</item>
+        <item>Miller, Andrew</item>
+        <item>Mills, Robert</item>
+        <item>Morely an dHill</item>
+        <item>Moses, Luther</item>
+        <item>Muir, Alexander and Livingston</item>
+        <item>Navagh, James</item>
+        <item>Oades, John</item>
+        <item>Peck, E. M.</item>
+        <item>Peck and Masters</item>
+        <item>Pierson, Harrison C.</item>
+        <item>Quayle and Martin</item>
+        <item>Quayle and Peck</item>
+        <item>Rand and Burger</item>
+        <item>Rankin and Blackmore</item>
+        <item>Roby</item>
+        <item>Rogers, H.</item>
+        <item>Root, H.D.</item>
+        <item>Roy, Bartholomew</item>
+        <item>Shickluna, Lewis</item>
+        <item>Smith, J.P.</item>
+        <item>Squires, John</item>
+        <item>Stavanger, Stoberi and Dok</item>
+        <item>Tripp, Augustus</item>
+		<item>Union Dry Dock Co.</item>
+		<item>Waterbury</item>
+        <item>Wheeler</item>
+        <item>Wheeler, F.W. and Company</item>
+        <item>Wilcox, Asa</item>
+        <item>Windiate, Thomas</item>
+        <item>Wolf and Davidson</item>
+    </string-array>
+    <string-array name="buildPlace_array">
+        <item ></item>
+        <item>Algonac, Michigan</item>
+        <item>Black River, Ohio</item>
+        <item>Buffalo, New York</item>
+        <item>Chicago, Illinois</item>
+        <item>Clayton, New York</item>
+        <item>Cleveland, Ohio</item>
+        <item>Conneaut, Ohio</item>
+        <item>Detroit, Michigan</item>
+        <item>East Saginaw, MI</item>
+        <item>Fairport, Ohio</item>
+        <item>Flensburg, Germany</item>
+        <item>Gibraltar, Michigan</item>
+        <item>Huron, Ohio</item>
+        <item>Lorain, Ohio</item>
+        <item>Manitowoc, Wisconsin</item>
+        <item>Marine City, Michigan</item>
+        <item>Michigan St. Clair,</item>
+        <item>Milwaukee, Wisconsin</item>
+        <item>New Jerusalem, Ohio</item>
+        <item>Ogdensburg, New York</item>
+        <item>Olcott, New York</item>
+        <item>Oswego, New York</item>
+        <item>Perrysburg, Ohio</item>
+        <item>Pillar Point, New York</item>
+        <item>Port Dover, Ontario</item>
+        <item>Port Glasgow, Scotland</item>
+        <item>Port Huron, Michigan</item>
+        <item>Saginaw, Michigan</item>
+        <item>Saugatuck, Michigan</item>
+        <item>Sebewaing, Michigan</item>
+        <item>St. Catharines, Ontario</item>
+        <item>St. Clair, Michigan</item>
+        <item>Stavanger, Norway</item>
+        <item>Toledo, Ohio</item>
+        <item>Tonawonda, New York</item>
+        <item>Vermilion, Ohio</item>
+        <item>West Bay City, Michigan</item>
+        <item>Wyandotte, Michigan</item>
+    </string-array>
+    <string-array name="county_array">
+        <item ></item>
+        <item>Alcona</item>
+        <item>Alpena</item>
+        <item>Cheboygan</item>
+        <item>Presque Isle</item>
+    </string-array>
+    <string-array name="depth_array">
+        <item ></item>
+        <item>Less than 10</item>
+        <item>Less than 50</item>
+        <item>Less than 100</item>
+        <item>Greater than 100</item>
+    </string-array>
 </resources>

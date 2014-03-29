@@ -8,25 +8,47 @@
 package edu.mtu.citizenscience.thunderbay;
 
 public final class R {
+    public static final class array {
+        public static final int buildPlace_array=0x7f050005;
+        public static final int builder_array=0x7f050004;
+        public static final int built_array=0x7f050002;
+        public static final int county_array=0x7f050006;
+        public static final int depth_array=0x7f050007;
+        public static final int hull_array=0x7f050001;
+        public static final int lost_array=0x7f050003;
+        public static final int vesseltype_array=0x7f050000;
+    }
     public static final class attr {
     }
     public static final class drawable {
-        public static final int thuder_bay_logo=0x7f020000;
+        public static final int ic_action_search=0x7f020000;
+        public static final int thuder_bay_logo=0x7f020001;
     }
     public static final class id {
-<<<<<<< HEAD
-        public static final int button1=0x7f060005;
-=======
->>>>>>> origin/master
-        public static final int desc=0x7f060003;
-        public static final int fragment_container=0x7f060000;
-        public static final int icon=0x7f060001;
-        public static final int list=0x7f060004;
-<<<<<<< HEAD
-=======
-        public static final int searchbutton=0x7f060005;
->>>>>>> origin/master
-        public static final int title=0x7f060002;
+        public static final int buildPlace_spinner=0x7f070010;
+        public static final int buildPlace_textView=0x7f07000f;
+        public static final int builder_spinner=0x7f07000e;
+        public static final int builder_textView=0x7f07000d;
+        public static final int built_spinner=0x7f07000a;
+        public static final int built_textView=0x7f070009;
+        public static final int county_spinner=0x7f070012;
+        public static final int county_textView=0x7f070011;
+        public static final int depth_spinner=0x7f070014;
+        public static final int depth_textView=0x7f070013;
+        public static final int desc=0x7f070003;
+        public static final int fragment_container=0x7f070000;
+        public static final int hull_spinner=0x7f070008;
+        public static final int hull_textView=0x7f070007;
+        public static final int icon=0x7f070001;
+        public static final int list=0x7f070004;
+        public static final int lost_spinner=0x7f07000c;
+        public static final int lost_textView=0x7f07000b;
+        public static final int searchbutton=0x7f070015;
+        public static final int title=0x7f070002;
+        public static final int vesselimage_imageView=0x7f070016;
+        public static final int vesselname_textView=0x7f070017;
+        public static final int vesseltype_spinner=0x7f070006;
+        public static final int vesseltype_textView=0x7f070005;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -35,15 +57,23 @@ public final class R {
         public static final int list_view=0x7f030003;
         public static final int mapfragmenttab=0x7f030004;
         public static final int searchfragmenttab=0x7f030005;
+        public static final int wreck_view=0x7f030006;
     }
     public static final class string {
-        public static final int Button=0x7f040005;
+        public static final int Button=0x7f040004;
         public static final int HelpFragment=0x7f040002;
         public static final int MapFragment=0x7f040003;
-        public static final int SearchFragment=0x7f040004;
         public static final int app_name=0x7f040000;
-        public static final int image=0x7f040006;
+        public static final int buildPlace=0x7f04000b;
+        public static final int builder=0x7f04000a;
+        public static final int built=0x7f040008;
+        public static final int county=0x7f04000c;
+        public static final int depth=0x7f04000d;
+        public static final int hull=0x7f040007;
+        public static final int image=0x7f040005;
+        public static final int lost=0x7f040009;
         public static final int menu_settings=0x7f040001;
+        public static final int type=0x7f040006;
     }
     public static final class style {
         /** 
@@ -67,10 +97,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f050000;
+        public static final int AppBaseTheme=0x7f060000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f050001;
+        public static final int AppTheme=0x7f060001;
     }
 }

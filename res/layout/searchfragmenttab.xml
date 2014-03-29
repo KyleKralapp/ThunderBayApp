@@ -1,23 +1,124 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
- 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/SearchFragment" />
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
-    <Button
-        android:id="@+id/searchbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="@string/Button"
-        android:onClick="start" />
- 
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/vesseltype_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type" />
+
+        <Spinner
+            android:id="@+id/vesseltype_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vesseltype_textView" />
+
+        <TextView
+            android:id="@+id/hull_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vesseltype_spinner"
+            android:text="@string/hull" />
+
+        <Spinner
+            android:id="@+id/hull_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hull_textView" />
+
+        <TextView
+            android:id="@+id/built_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hull_spinner"
+            android:text="@string/built" />
+
+        <Spinner
+            android:id="@+id/built_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/built_textView" />
+
+        <TextView
+            android:id="@+id/lost_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/built_spinner"
+            android:text="@string/built" />
+
+        <Spinner
+            android:id="@+id/lost_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lost_textView" />
+
+        <TextView
+            android:id="@+id/builder_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lost_spinner"
+            android:text="@string/builder" />
+
+        <Spinner
+            android:id="@+id/builder_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/builder_textView" />
+
+        <TextView
+            android:id="@+id/buildPlace_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/builder_spinner"
+            android:text="@string/buildPlace" />
+
+        <Spinner
+            android:id="@+id/buildPlace_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buildPlace_textView" />
+
+        <TextView
+            android:id="@+id/county_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buildPlace_spinner"
+            android:text="@string/county" />
+
+        <Spinner
+            android:id="@+id/county_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/county_textView" />
+
+        <TextView
+            android:id="@+id/depth_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/county_spinner"
+            android:text="@string/depth" />
+
+        <Spinner
+            android:id="@+id/depth_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/depth_textView" />
+
+        <Button
+            android:id="@+id/searchbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/depth_spinner"
+            android:drawableLeft="@drawable/ic_action_search"
+            android:onClick="start"
+            android:text="@string/Button" />
+    </RelativeLayout>
+
+</ScrollView>

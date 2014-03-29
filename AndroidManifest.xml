@@ -19,17 +19,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
+
         <activity
-        	android:name="edu.mtu.citizenscience.thunderbay.ImageTextListViewActivity" >
+        	android:name="edu.mtu.citizenscience.thunderbay.ImageTextListViewActivity"
+        	android:parentActivityName="edu.mtu.citizenscience.thunderbay.MainActivity" >
         </activity>
-=======
-        
         <activity
-        	android:name="edu.mtu.citizenscience.thunderbay.ImageTextListViewActivity" >
+        	android:name="edu.mtu.citizenscience.thunderbay.WreckViewActivity"
+        	android:parentActivityName="edu.mtu.citizenscience.thunderbay.MainActivity" >
         </activity>
-        
->>>>>>> origin/master
     </application>
  
 </manifest>

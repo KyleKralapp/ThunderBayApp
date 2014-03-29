@@ -23,14 +23,8 @@ public class MainActivity extends Activity {
 	Fragment helpFragmentTab = new HelpFragmentTab();
 	Fragment mapFragmentTab = new MapFragmentTab();
 	Fragment searchFragmentTab = new SearchFragmentTab();
-
-	//ThunderBay myBay = new ThunderBay();
-//	// set
-//	((ThunderBay) this.getApplication()).addShipWreck(ShipWreck theWreck);
-//
-//	// get
-//	HashMap<String, ShipWreck> ships = ((ThunderBay) this.getApplication()).getShipWrecks();
 	
+	ThunderBay myBay = new ThunderBay();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -38,15 +32,6 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 
 		ActionBar actionBar = getActionBar();
-		
-		Button button = (Button)findViewById(R.id.button1);
-        button.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-	    	  Intent i = new Intent();
-	          startActivity(i);
-          }
-        });
 
 		loadData();
 
@@ -85,7 +70,6 @@ public class MainActivity extends Activity {
 	 * @return boolean -- true: successful load.... false: unsuccessful load
 	 *
 	 */
-	//TODO
 	public boolean loadData(){
 
 		InputStream tsvFile;
@@ -103,15 +87,10 @@ public class MainActivity extends Activity {
 				String[] RowData = line.split("\\t");
 				readCount++;
 				//ignore first row of headings
-
-				System.out.println("trying to add " + RowData[0] + " with size " + RowData.length);
-
 				if(readCount>1){
 					//myBay.addShipWreck(BuildWreck(RowData));
 					ThunderBay.addShipWreck(BuildWreck(RowData));
 				}
-
-				System.out.println(RowData[0] + " was added.");
 			}
 		}
 		catch (IOException ex) {
@@ -207,7 +186,6 @@ public class MainActivity extends Activity {
 			livesLost = -1;
 		} finally {
 			myWreck.setLivesLost(livesLost);
-			System.out.println("lives lost " + livesLost);
 		}
 
 		//Set County
