@@ -7,7 +7,6 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -40,13 +39,17 @@ public class MapFragmentTab extends Fragment {
         return rootview;
     }
     
-    @Override
+	@Override
 	public void onDestroyView() {
-    	super.onDestroyView(); 
-    	Fragment fragment = (getFragmentManager().findFragmentById(R.id.map));  
-    	FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
-    	ft.remove(fragment);
-    	ft.commit();
+		super.onDestroyView();
+
+		if (!getActivity().isDestroyed()) {
+			Fragment fragment = (getFragmentManager().findFragmentById(R.id.map));  
+			FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
+			ft.remove(fragment);
+			ft.commit();
+		}
+
 	}
     
 	private void initilizeMap() {
