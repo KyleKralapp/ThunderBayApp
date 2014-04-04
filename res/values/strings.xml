@@ -6,14 +6,14 @@
     <string name="MapFragment">This is the Map Fragment</string>
     <string name="Button">Search</string>
     <string name="image">Thumbnail</string>
-    <string name="type">Select Vessel Type</string>
-    <string name="hull">Select Hull Type</string>
-    <string name="built">Select the Century Built</string>
-    <string name="lost">Select the Century Lost</string>
+    <string name="type">Select a Vessel Type</string>
+    <string name="hull">Select a Vessel Hull Type</string>
+    <string name="built">Select a the Century Built</string>
+    <string name="lost">Select a the Century Lost</string>
     <string name="builder">Select a Builder</string>
     <string name="buildPlace">Select a Build Place</string>
-    <string name="county">Select the County Found In</string>
-    <string name="depth">Select the Depth of Wreck</string>
+    <string name="county">Select a the County of Current Location</string>
+    <string name="depth">Select a the Depth of Current Location</string>
     <string-array name="vesseltype_array">
         <item ></item>
         <item>Barge</item>

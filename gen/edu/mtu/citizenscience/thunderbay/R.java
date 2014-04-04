@@ -21,28 +21,104 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int ic_action_search=0x7f020000;
-        public static final int thuder_bay_logo=0x7f020001;
+        public static final int albany=0x7f020000;
+        public static final int alvin_buckingham=0x7f020001;
+        public static final int americian_union=0x7f020002;
+        public static final int barge_one=0x7f020003;
+        public static final int baycity=0x7f020004;
+        public static final int blanchard_b_w=0x7f020005;
+        public static final int city_of_alpena=0x7f020006;
+        public static final int cornelia_b_windiate=0x7f020007;
+        public static final int corsican2=0x7f020008;
+        public static final int d_m_wilson=0x7f020009;
+        public static final int d_r_hanna=0x7f02000a;
+        public static final int davidson_james=0x7f02000b;
+        public static final int defiance=0x7f02000c;
+        public static final int detroit=0x7f02000d;
+        public static final int dump_scow=0x7f02000e;
+        public static final int duncan_city=0x7f02000f;
+        public static final int e_b_allen=0x7f020010;
+        public static final int empire_state=0x7f020011;
+        public static final int eqypt=0x7f020012;
+        public static final int f_t_barney=0x7f020013;
+        public static final int florida=0x7f020014;
+        public static final int franklin_b=0x7f020015;
+        public static final int franz=0x7f020016;
+        public static final int galena=0x7f020017;
+        public static final int grecian=0x7f020018;
+        public static final int haltiner_barge=0x7f020019;
+        public static final int harvey_bissell=0x7f02001a;
+        public static final int heart_failure=0x7f02001b;
+        public static final int i_m_scott=0x7f02001c;
+        public static final int ic_action_search=0x7f02001d;
+        public static final int ishpeming=0x7f02001e;
+        public static final int james_h_hall=0x7f02001f;
+        public static final int john_j_audubon=0x7f020020;
+        public static final int john_l_shaw=0x7f020021;
+        public static final int johnson_t_j=0x7f020022;
+        public static final int joseph_s_fay=0x7f020023;
+        public static final int kyle_spangler=0x7f020024;
+        public static final int l_v_vanvalkenburg=0x7f020025;
+        public static final int loretta=0x7f020026;
+        public static final int marinecity=0x7f020027;
+        public static final int messenger=0x7f020028;
+        public static final int monohansett=0x7f020029;
+        public static final int monrovia=0x7f02002a;
+        public static final int montana=0x7f02002b;
+        public static final int neworleans=0x7f02002c;
+        public static final int nordmeer=0x7f02002d;
+        public static final int norman=0x7f02002e;
+        public static final int o_e_parks=0x7f02002f;
+        public static final int ogarita=0x7f020030;
+        public static final int oscar_t_flint=0x7f020031;
+        public static final int pewabic=0x7f020032;
+        public static final int portland=0x7f020033;
+        public static final int portsmouth=0x7f020034;
+        public static final int reindeer=0x7f020035;
+        public static final int rend_w_p=0x7f020036;
+        public static final int shamrock=0x7f020037;
+        public static final int spud=0x7f020038;
+        public static final int stevens_william_h=0x7f020039;
+        public static final int thuder_bay_logo=0x7f02003a;
+        public static final int typo=0x7f02003b;
+        public static final int viator=0x7f02003c;
+        public static final int w_g_mason=0x7f02003d;
+        public static final int w_h_gilbert=0x7f02003e;
+        public static final int w_p_thew=0x7f02003f;
+        public static final int warner_j_f=0x7f020040;
+        public static final int william_maxwell=0x7f020041;
     }
     public static final class id {
+        public static final int beam_textView=0x7f070018;
         public static final int buildPlace_spinner=0x7f070010;
         public static final int buildPlace_textView=0x7f07000f;
         public static final int builder_spinner=0x7f07000e;
         public static final int builder_textView=0x7f07000d;
+        public static final int buildplace_textView=0x7f07001c;
         public static final int built_spinner=0x7f07000a;
         public static final int built_textView=0x7f070009;
+        public static final int cargo_textView=0x7f07001a;
         public static final int county_spinner=0x7f070012;
         public static final int county_textView=0x7f070011;
         public static final int depth_spinner=0x7f070014;
         public static final int depth_textView=0x7f070013;
         public static final int desc=0x7f070003;
+        public static final int divider1=0x7f07001b;
+        public static final int divider2=0x7f07001d;
+        public static final int divider3=0x7f070022;
         public static final int fragment_container=0x7f070000;
         public static final int hull_spinner=0x7f070008;
         public static final int hull_textView=0x7f070007;
         public static final int icon=0x7f070001;
+        public static final int latitude_textView=0x7f070020;
+        public static final int length_textView=0x7f070019;
         public static final int list=0x7f070004;
+        public static final int liveslost_textView=0x7f07001f;
+        public static final int longitude_textView=0x7f070021;
+        public static final int losstype_textView=0x7f07001e;
         public static final int lost_spinner=0x7f07000c;
         public static final int lost_textView=0x7f07000b;
+        public static final int notes_textView=0x7f070023;
         public static final int searchbutton=0x7f070015;
         public static final int title=0x7f070002;
         public static final int vesselimage_imageView=0x7f070016;
@@ -88,6 +164,7 @@ public final class R {
 
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
+
     
  API 11 theme customizations can go here. 
 

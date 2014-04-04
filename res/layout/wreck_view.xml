@@ -12,6 +12,9 @@
             android:id="@+id/vesselimage_imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:adjustViewBounds="true"
             android:contentDescription="@string/image" />
 
@@ -28,16 +31,122 @@
             android:layout_below="@id/vesselname_textView" />
 
         <TextView
-            android:id="@+id/builder_textView"
+            android:id="@+id/hull_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/vesseltype_textView" />
 
         <TextView
-            android:id="@+id/built_textView"
+            android:id="@+id/beam_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hull_textView" />
+
+        <TextView
+            android:id="@+id/length_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/beam_textView" />
+
+        <TextView
+            android:id="@+id/cargo_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/length_textView" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@id/cargo_textView"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/builder_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider1" />
+
+        <TextView
+            android:id="@+id/buildplace_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/builder_textView" />
+
+        <TextView
+            android:id="@+id/built_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buildplace_textView" />
+        
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@id/built_textView"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/lost_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider2" />
+
+        <TextView
+            android:id="@+id/losstype_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lost_textView" />
+
+        <TextView
+            android:id="@+id/liveslost_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/losstype_textView" />
+
+        <TextView
+            android:id="@+id/county_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/liveslost_textView" />
+
+        <TextView
+            android:id="@+id/latitude_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/county_textView" />
+
+        <TextView
+            android:id="@+id/longitude_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/latitude_textView" />
+
+        <TextView
+            android:id="@+id/depth_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/longitude_textView" />
+        
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@id/depth_textView"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/notes_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/divider3" />
     </RelativeLayout>
 
 </ScrollView>
