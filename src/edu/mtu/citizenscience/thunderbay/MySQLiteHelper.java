@@ -10,6 +10,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper{
 
 	public static final String DATABASE_NAME = "thunderbay.db";
 	public static final String TABLE_THUNDERBAY = "thunderbay";
+	public static final String COLUMN_ID = "_id";
 	public static final String name = "name";
 	public static final String type = "type";
 	public static final String hull = "hull";
@@ -31,10 +32,11 @@ public class MySQLiteHelper extends SQLiteOpenHelper{
 	
 	
 	private static final int DATABASE_VERSION = 1;
-	private static final String DATABASE_CREATE = "create table" + TABLE_THUNDERBAY + "(" + name + "CHAR(16) PRIMARY KEY NOT NULL"
-			+ type + "CHAR(16)" + hull + "CHAR(16)" + built + "INTEGER" + lost + "INTEGER" + builder + "TEXT" + buildPlace + "TEXT" +
-			length + "DOUBLE" + beam + "DOUBLE" + lossType + "TEXT" + cargo + "TEXT" + livesLost + "INTEGER" + county + "TEXT" + latitude 
-			+ "FLOAT" + longitude + "FLOAT" + depth + "DOUBLE" + notes + "TEXT" + ");";
+	private static final String DATABASE_CREATE = "create table" + TABLE_THUNDERBAY + "(" + COLUMN_ID
+		      + " integer primary key autoincrement, "+ name + "TEXT NOT NULL,"
+			+ type + "TEXT," + hull + "TEXT," + built + "INTEGER," + lost + "INTEGER," + builder + "TEXT," + buildPlace + "TEXT," +
+			length + "DOUBLE," + beam + "DOUBLE," + lossType + "TEXT," + cargo + "TEXT," + livesLost + "INTEGER," + county + "TEXT," + latitude 
+			+ "FLOAT," + longitude + "FLOAT," + depth + "DOUBLE," + notes + "TEXT" + ");";
 	
 
 			public MySQLiteHelper(Context context){

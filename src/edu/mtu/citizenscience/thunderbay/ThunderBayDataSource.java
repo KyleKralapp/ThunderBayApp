@@ -1,6 +1,10 @@
 package edu.mtu.citizenscience.thunderbay;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.w3c.dom.Comment;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,7 +15,7 @@ public class ThunderBayDataSource {
 
 	private SQLiteDatabase database;
 	private MySQLiteHelper dbHelper;
-	private String[] allColumns = {MySQLiteHelper.name,MySQLiteHelper.type,MySQLiteHelper.hull,
+	private String[] allColumns = {MySQLiteHelper.COLUMN_ID,MySQLiteHelper.name,MySQLiteHelper.type,MySQLiteHelper.hull,
 			MySQLiteHelper.built,MySQLiteHelper.lost,MySQLiteHelper.builder,MySQLiteHelper.buildPlace,
 			MySQLiteHelper.length,MySQLiteHelper.beam,MySQLiteHelper.lossType,MySQLiteHelper.cargo,
 			MySQLiteHelper.livesLost, MySQLiteHelper.county,MySQLiteHelper.latitude,
@@ -53,17 +57,42 @@ public class ThunderBayDataSource {
 		values.put(MySQLiteHelper.longitude, longitude);
 		values.put(MySQLiteHelper.depth, depth);
 		values.put(MySQLiteHelper.notes, notes);
-		
+
 		long insertId = database.insert(MySQLiteHelper.TABLE_THUNDERBAY, null,
-		        values);
-		
+				values);
+
 		Cursor cursor = database.query(MySQLiteHelper.TABLE_THUNDERBAY,
-		        allColumns, MySQLiteHelper + " = " + insertId, null,
-		        null, null, null);
-		
-		
-		return null;
-		
+				allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertId, null,
+				null, null, null);
+		cursor.moveToFirst();
+		ShipWreck newWreck = cursorToWreck(cursor);
+		cursor.close();
+		return newWreck;	
 	}
 	
+	public List<ShipWreck> getAllComments() {
+	    List<ShipWreck> wrecks = new ArrayList<ShipWreck>();
+
+	    Cursor cursor = database.query(MySQLiteHelper.TABLE_THUNDERBAY,
+	        allColumns, null, null, null, null, null);
+
+	    cursor.moveToFirst();
+	    while (!cursor.isAfterLast()) {
+	      ShipWreck myShipWreck = cursorToWreck(cursor);
+	      wrecks.add(myShipWreck);
+	      cursor.moveToNext();
+	    }
+	    // make sure to close the cursor
+	    cursor.close();
+	    return wrecks;
+	  }
+	
+	private ShipWreck cursorToWreck(Cursor cursor) {
+	    ShipWreck shipWreck = new ShipWreck();
+	    shipWreck.setId(cursor.getLong(0));
+	    shipWreck.setName((cursor.getString(1)));
+	    return shipWreck;
+	  }
+	
+
 }

@@ -20,9 +20,14 @@ public class ShipWreck {
 	private float longitude;
 	private double depth;
 	private String notes;
+	private long id;
 	
-	public ShipWreck(){
-		
+	public long getId(){
+		return id;
+	}
+	
+	public void setId(long newId){
+		this.id = newId;
 	}
 
 	public String getName() {
