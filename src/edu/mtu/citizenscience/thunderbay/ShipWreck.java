@@ -1,7 +1,5 @@
 package edu.mtu.citizenscience.thunderbay;
 
-import java.util.Date;
-
 public class ShipWreck {
 	private String name;
 	private String type;

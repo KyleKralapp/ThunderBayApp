@@ -8,28 +8,23 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import android.app.Activity;
-import android.os.Bundle;
+import android.app.Application;
 
 /**
  * @author jdploe
  *
  */
-public class ThunderBay
-{
-	private HashMap<String, ShipWreck> shipWrecks = new HashMap<String, ShipWreck>();
-	
-	
-	
-	public ShipWreck addShipWreck(ShipWreck theWreck){
-		return shipWrecks.put(theWreck.getName(), theWreck);
+public class ThunderBay {
+
+	private static HashMap<String, ShipWreck> shipWrecks = new HashMap<String, ShipWreck>();
+
+	public static void addShipWreck(ShipWreck theWreck){
+		shipWrecks.put(theWreck.getName(), theWreck);
 	}
 
-	public HashMap<String, ShipWreck> getShipWrecks() {
+	public static HashMap<String, ShipWreck> getShipWrecks() {
 		return shipWrecks;
 	}
-
-	
 
 	/**
 	 * Loads data from tsv file and calls BuildWreck with array of data per ship
@@ -38,26 +33,23 @@ public class ThunderBay
 	 * @return boolean -- true: successful load.... false: unsuccessful load
 	 *
 	 */
-	
 
-public void testSearch(int depth) {
-		
+
+	public void testSearch(int depth) {
+
 		Iterator it = shipWrecks.entrySet().iterator();
-		
+
 		while (it.hasNext()) {
-	        Map.Entry pairs = (Map.Entry)it.next();
-	        ShipWreck myWreck = (ShipWreck) pairs.getValue();
-	        
-	        if(myWreck.getDepth() < depth){
-	        	System.out.println(pairs.getKey().toString() +"--->" + myWreck.getDepth());
-	        }
-	        
-	        it.remove(); // avoids a ConcurrentModificationException
-	    }
-		
+			Map.Entry pairs = (Map.Entry)it.next();
+			ShipWreck myWreck = (ShipWreck) pairs.getValue();
+
+			if(myWreck.getDepth() < depth){
+				System.out.println(pairs.getKey().toString() +"--->" + myWreck.getDepth());
+			}
+
+			it.remove(); // avoids a ConcurrentModificationException
+		}
+
 	}
-
-
-
 
 }
