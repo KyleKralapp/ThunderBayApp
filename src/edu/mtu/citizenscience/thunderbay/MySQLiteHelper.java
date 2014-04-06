@@ -32,11 +32,11 @@ public class MySQLiteHelper extends SQLiteOpenHelper{
 	
 	
 	private static final int DATABASE_VERSION = 1;
-	private static final String DATABASE_CREATE = "create table" + TABLE_THUNDERBAY + "(" + COLUMN_ID
-		      + " integer primary key autoincrement, "+ name + "TEXT NOT NULL,"
-			+ type + "TEXT," + hull + "TEXT," + built + "INTEGER," + lost + "INTEGER," + builder + "TEXT," + buildPlace + "TEXT," +
-			length + "DOUBLE," + beam + "DOUBLE," + lossType + "TEXT," + cargo + "TEXT," + livesLost + "INTEGER," + county + "TEXT," + latitude 
-			+ "FLOAT," + longitude + "FLOAT," + depth + "DOUBLE," + notes + "TEXT" + ");";
+	public static final String DATABASE_CREATE = "create table " + TABLE_THUNDERBAY + "(" + COLUMN_ID
+		      + " integer primary key autoincrement, "+ name + " TEXT NOT NULL,"
+			+ type + " TEXT," + hull + " TEXT," + built + " INTEGER," + lost + " INTEGER," + builder + " TEXT," + buildPlace + " TEXT," +
+			length + " DOUBLE," + beam + " DOUBLE," + lossType + " TEXT," + cargo + " TEXT," + livesLost + " INTEGER," + county + " TEXT," + latitude 
+			+ " FLOAT," + longitude + " FLOAT," + depth + " DOUBLE," + notes + " TEXT" + ");";
 	
 
 			public MySQLiteHelper(Context context){

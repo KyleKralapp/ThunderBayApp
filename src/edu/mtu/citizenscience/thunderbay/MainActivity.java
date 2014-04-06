@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -24,12 +25,7 @@ public class MainActivity extends Activity {
 	Fragment mapFragmentTab = new MapFragmentTab();
 	Fragment searchFragmentTab = new SearchFragmentTab();
 
-	//ThunderBay myBay = new ThunderBay();
-//	// set
-//	((ThunderBay) this.getApplication()).addShipWreck(ShipWreck theWreck);
-//
-//	// get
-//	HashMap<String, ShipWreck> ships = ((ThunderBay) this.getApplication()).getShipWrecks();
+	private ThunderBayDataSource datasource;
 	
 
 	@Override
@@ -37,6 +33,14 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		datasource = new ThunderBayDataSource(this);
+	    try {
+			datasource.open();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		ActionBar actionBar = getActionBar();
 
 		loadData();
@@ -99,7 +103,7 @@ public class MainActivity extends Activity {
 
 				if(readCount>1){
 					//myBay.addShipWreck(BuildWreck(RowData));
-					ThunderBay.addShipWreck(BuildWreck(RowData));
+					BuildWreck(RowData);
 				}
 
 				System.out.println(RowData[0] + " was added.");
@@ -125,95 +129,83 @@ public class MainActivity extends Activity {
 	}
 
 	private ShipWreck BuildWreck(String[] rowData) {
-		ShipWreck myWreck = new ShipWreck();
 
-		myWreck.setName(rowData[0]);
-		myWreck.setType(rowData[1]);
-		myWreck.setHull(rowData[2]);
+		String name = rowData[0];
+		String type = rowData[1];
+		String hull = rowData[2];
 
 		//Get yearBuilt
-		int yearBuilt = 0;
+		int yearBuilt;
 		try {
 			yearBuilt = Integer.valueOf(rowData[3]);
 		}  catch(Exception E){ //Not an integer (unknown)
 			//Exception stuff here
 			System.out.println("THE YEAR BUILT IS UNKNOWN");
 			yearBuilt = -1;
-		} finally{
-			myWreck.setBuilt(yearBuilt);
-		}
+		} 
 
 		//Get yearLost
-		int yearLost = 0;
+		int yearLost;
 		try{
 			yearLost = Integer.valueOf(rowData[4]);
 		}  catch(Exception E){ //Not an integer (unknown)
 			//Exception stuff here
 			System.out.println("THE YEAR LOST IS UNKNOWN");
 			yearLost = -1;
-		} finally{
-			myWreck.setLost(yearLost);
 		}
 
 		//Get Builder
-		myWreck.setBuilder(rowData[5]);
+		String builder = rowData[5];
 		//Get Build Place
-		myWreck.setBuildPlace(rowData[6]);
+		String buildPlace = rowData[6];
 		//Get length
-		double length = 0;
+		double length;
 		try {
 			length = Double.valueOf(rowData[7]);
 		} catch(Exception E){ //Not a Double (unknown)
 			//Exception stuff here
 			System.out.println("THE LENGTH IS UNKNOWN");
 			length = -1;
-		} finally{
-			myWreck.setLength(length);
 		}
 
 		//Get Beam
-		double beam = 0;
+		double beam;
 		try {
 			beam = Double.valueOf(rowData[8]);
 		} catch(Exception E){ //Not a Double (unknown)
 			//Exception stuff here
 			System.out.println("THE BEAM IS UNKNOWN");
 			beam = -1;
-		} finally {
-			myWreck.setBeam(beam);
 		}
 
 		//Set Loss Type
-		myWreck.setLossType(rowData[9]);
+		String lossType = rowData[9];
 		//Set Cargo
-		myWreck.setCargo(rowData[10]);
+		String cargo = rowData[10];
 		
 		//Set Lives Lost
-		int livesLost = 0;
+		int livesLost;
 		try {
 			livesLost = Integer.valueOf(rowData[11]);
 		} catch(Exception E){ //Not an integer (unknown)
 			//Exception stuff here
 			System.out.println("THE LIVES LOST IS UNKNOWN");
 			livesLost = -1;
-		} finally {
-			myWreck.setLivesLost(livesLost);
-			System.out.println("lives lost " + livesLost);
 		}
 
 		//Set County
-		myWreck.setCounty(rowData[12]);
+		String county = rowData[12];
 
 		/**
 		 * Need to parse longitutde and latitude
 		 * prolly gonna need to use regex
 		 * 
 		 */
-		myWreck.setLatitude(Float.MIN_VALUE); //FAKE DATA!!!!
-		myWreck.setLongitude(Float.MAX_VALUE);//FAKE DATA!!!!
+		float latitude = Float.MIN_VALUE; //FAKE DATA!!!!
+		float longitude = Float.MAX_VALUE;//FAKE DATA!!!!
 		
 		//Set depth
-		int depth = 0;
+		int depth;
 		try {
 			depth = Integer.valueOf(rowData[15]);
 		} catch(Exception E){ //Not an integer (unknown)
@@ -221,18 +213,20 @@ public class MainActivity extends Activity {
 			System.out.println("THE DEPTH IS UNKNOWN");
 
 			depth = -1;
-		} finally {
-			myWreck.setDepth(depth);
 		}
 		
 		/**
 		 * Check to see if the record contains notes
 		 */
+		String notes;
 		if(rowData.length==17){
-			myWreck.setNotes(rowData[16]);
-		} 
+			notes = rowData[16];
+		}
+		else{
+			notes = "";
+		}
 
-		return myWreck;
+		return datasource.createWreck(name, type, hull, yearBuilt, yearLost, builder, buildPlace, length, beam, lossType, cargo, livesLost, county, latitude, longitude, depth, notes);
 	}
 }
 

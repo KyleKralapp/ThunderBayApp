@@ -26,6 +26,7 @@ public class ThunderBayDataSource {
 	}
 
 	public void open() throws SQLException {
+		System.out.println(dbHelper.DATABASE_CREATE);
 		database = dbHelper.getWritableDatabase();
 	}
 
